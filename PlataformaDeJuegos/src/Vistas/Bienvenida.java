@@ -162,13 +162,8 @@ public class Bienvenida extends javax.swing.JPanel {
 
     private void labelRegistrateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelRegistrateMouseClicked
         // TODO add your handling code here:
-        this.setVisible(false);
-        //Frame frame = new Frame();
         Registro formularioRegistro = new Registro();
-        //.setLayout(new BorderLayout());
-        this.add(formularioRegistro,BorderLayout.CENTER);
-        this.repaint();
-        this.setVisible(true);
+        formularioRegistro.setVisible(true);
     }//GEN-LAST:event_labelRegistrateMouseClicked
 
 
