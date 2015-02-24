@@ -6,6 +6,8 @@
 
 package Vistas;
 
+import SQL.OperacionesSQL;
+
 /**
  *
  * @author lio
@@ -53,6 +55,11 @@ public class Registro extends javax.swing.JFrame {
         jLabel5.setText("Confirmar Password :");
 
         botonRegistrar.setText("Registrame!");
+        botonRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistrarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,6 +122,15 @@ public class Registro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
+        // TODO add your handling code here:
+        String usuario , password;
+        usuario = String.valueOf(textUsuario.getText());
+        password = String.valueOf(textPassword.getText());
+        OperacionesSQL operacionesSQL = new OperacionesSQL();
+        operacionesSQL.Registrar(usuario, password);
+    }//GEN-LAST:event_botonRegistrarActionPerformed
 
     /**
      * @param args the command line arguments

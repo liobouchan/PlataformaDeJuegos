@@ -18,7 +18,7 @@ public class Conexion {
     public Conexion(){
     }
     
-    public void init(){
+    public Connection init(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
             conexion = DriverManager.getConnection("jdbc:mysql://localhost/juego", "root", "");
@@ -27,6 +27,7 @@ public class Conexion {
         catch(ClassNotFoundException | SQLException e){
             System.out.println("No se pudo Conectar");
         }
+        return conexion;
     }
     
     public Connection obtenerConexion(){
