@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  * @author lio
  */
 public class OperacionesSQL {
-    public Connection Registrar(String usuario , String password){
+    public void Registrar(String usuario , String password){
         Conexion conexion = new Conexion();
         Connection registro = conexion.init();
         String sql;
@@ -30,12 +30,12 @@ public class OperacionesSQL {
             if( n > 0 ){
                 JOptionPane.showMessageDialog(null,"registrado con exito");
             }
-                conexion.destroy();
+            conexion.destroy();
         }
         catch(SQLException e){
+            conexion.destroy();
             System.out.println(e);
         }
-        return null;
-        
+        conexion.destroy();
     }
 }

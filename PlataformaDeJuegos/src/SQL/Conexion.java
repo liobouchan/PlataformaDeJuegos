@@ -57,8 +57,11 @@ public class Conexion {
         if(conexion != null){
             try{
                 conexion.close();
+                System.out.println("Conexión Cerrada");
             }
-            catch(SQLException e){}
+            catch(SQLException e){
+                System.out.println(e);
+            }
         }
     }
 }
