@@ -26,16 +26,20 @@ public class OperacionesSQL {
    
     public void Registrar(String usuario , String password){
         int n;
-        sql = "INSERT INTO jugador (usuario,password)VALUES (?,?)";
         try{
-            PreparedStatement pst = comodin.prepareStatement(sql);
-            pst.setString(1, usuario);
-            pst.setString(2, password);
-            n = pst.executeUpdate();
-            if( n > 0 ){
-                JOptionPane.showMessageDialog(null,"Resgistrado con éxito");
+
+            if(ValidarUsuario(usuario) != 1){
+                sql = "INSERT INTO jugador (usuario,password)VALUES (?,?)";
+                PreparedStatement pst = comodin.prepareStatement(sql);
+                pst.setString(1, usuario);
+                pst.setString(2, password);
+                n = pst.executeUpdate();
+                if( n > 0 ){
+                    JOptionPane.showMessageDialog(null,"Resgistrado con éxito");
+                }
+            }else{
+                JOptionPane.showMessageDialog(null,"El usuario ya existe");
             }
-            conexion.destroy();
         }
         catch(SQLException e){
             conexion.destroy();
@@ -45,7 +49,6 @@ public class OperacionesSQL {
     }      
     
     public int ValidarUsuario(String usuario){
-        int n;
         sql = "SELECT usuario from jugador";
         
         try{
@@ -53,7 +56,7 @@ public class OperacionesSQL {
             resultSet = statement.executeQuery(sql);
             while(resultSet.next()){
                 if(resultSet.getString("usuario").equals(usuario))
-                    return 1;
+                        return 1;
             }
         }
         catch(SQLException e){
