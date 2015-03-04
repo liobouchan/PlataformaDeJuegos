@@ -7,6 +7,7 @@
 package Vistas;
 
 import SQL.OperacionesSQL;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -129,7 +130,12 @@ public class Registro extends javax.swing.JFrame {
         usuario = String.valueOf(textUsuario.getText());
         password = String.valueOf(textPassword.getText());
         OperacionesSQL operacionesSQL = new OperacionesSQL();
-        operacionesSQL.Registrar(usuario, password);
+        if(operacionesSQL.ValidarUsuario(usuario) == 1){
+            System.out.println("El usuario Ya Existe");
+            JOptionPane.showMessageDialog(null,"El usuario ya existe");
+        }else{
+            operacionesSQL.Registrar(usuario, password);
+        }
     }//GEN-LAST:event_botonRegistrarActionPerformed
 
     /**
