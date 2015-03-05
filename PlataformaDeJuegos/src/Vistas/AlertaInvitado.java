@@ -116,7 +116,9 @@ public class AlertaInvitado extends javax.swing.JFrame {
 
     private void botonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarseActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);     
+        this.setVisible(false);
+        Registro registro = new Registro();
+        registro.setVisible(true);
     }//GEN-LAST:event_botonRegistrarseActionPerformed
 
     /**
