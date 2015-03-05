@@ -24,7 +24,7 @@ public class OperacionesSQL {
    ResultSet resultSet;
    Statement statement;
    
-    public void Registrar(String usuario , String password){
+    public int Registrar(String usuario , String password){
         int n;
         try{
 
@@ -36,16 +36,21 @@ public class OperacionesSQL {
                 n = pst.executeUpdate();
                 if( n > 0 ){
                     JOptionPane.showMessageDialog(null,"Resgistrado con éxito");
+                    conexion.destroy();
+                    return 1;
                 }
             }else{
                 JOptionPane.showMessageDialog(null,"El usuario ya existe");
+                conexion.destroy();
+                return 0;
             }
         }
         catch(SQLException e){
             conexion.destroy();
             System.out.println(e);
         }
-        conexion.destroy();
+       conexion.destroy();
+       return 0;
     }      
     
     public int ValidarUsuario(String usuario){
