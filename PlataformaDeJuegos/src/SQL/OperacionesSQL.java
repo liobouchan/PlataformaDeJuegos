@@ -65,4 +65,26 @@ public class OperacionesSQL {
         }
         return 0;
     }
+    
+    public int InicioDeSesion(String usuario , String password){
+        sql = "SELECT * FROM jugador WHERE usuario = '" + usuario + "' AND password = '" + password + "'";;
+        int i = 0; 
+        try{
+            PreparedStatement pstm = comodin.prepareStatement(sql);
+            resultSet = pstm.executeQuery();
+            while(resultSet.next()){
+                System.out.println(resultSet.getString("usuario") + resultSet.getString("password"));
+                i++;
+                conexion.destroy();
+                return i;
+            }
+            resultSet.close();
+        }
+        catch(SQLException e){
+            System.out.println(e);
+            conexion.destroy();
+        }
+        conexion.destroy();
+        return 0;
+    }
 }

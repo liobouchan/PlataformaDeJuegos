@@ -7,6 +7,7 @@
 package Vistas;
 
 import SQL.Conexion;
+import SQL.OperacionesSQL;
 import java.awt.BorderLayout;
 import plataformadejuegos.PlataformaDeJuegos;
 
@@ -74,6 +75,11 @@ public class Bienvenida extends javax.swing.JPanel {
         });
 
         jButton2.setText("OK");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("¡Al registrarte recibirás un juego extra!");
 
@@ -166,6 +172,19 @@ public class Bienvenida extends javax.swing.JPanel {
         Registro formularioRegistro = new Registro();
         formularioRegistro.setVisible(true);
     }//GEN-LAST:event_labelRegistrateMouseClicked
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        String usuario , password;
+        usuario = String.valueOf(usuarioTextField.getText());
+        password = String.valueOf(passwordTextField.getText());
+        OperacionesSQL operacionesSQL = new OperacionesSQL();
+        if(operacionesSQL.InicioDeSesion(usuario, password)==1){
+            System.out.println("inicio de sesion");
+        }else{
+            System.out.println("pedo en bienvenida no entro");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
