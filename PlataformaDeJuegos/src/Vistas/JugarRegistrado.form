@@ -49,7 +49,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="botonBuscaminasFacil" min="-2" max="-2" attributes="0"/>
                                   <Component id="botonBuscaminasDificil" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="botonBuscaMinasExperto" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -78,7 +78,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="botonBuscaminasDificil" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                      <Component id="botonBuscaMinasExperto" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
@@ -135,12 +135,12 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonBuscaminasDificilActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="botonBuscaMinasExperto">
       <Properties>
         <Property name="text" type="java.lang.String" value="Experto"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonBuscaMinasExpertoActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="botonPersonalizado">

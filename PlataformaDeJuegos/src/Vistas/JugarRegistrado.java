@@ -44,7 +44,7 @@ public class JugarRegistrado extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         botonBuscaminasFacil = new javax.swing.JButton();
         botonBuscaminasDificil = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        botonBuscaMinasExperto = new javax.swing.JButton();
         botonPersonalizado = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,10 +79,10 @@ public class JugarRegistrado extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Experto");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        botonBuscaMinasExperto.setText("Experto");
+        botonBuscaMinasExperto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                botonBuscaMinasExpertoActionPerformed(evt);
             }
         });
 
@@ -116,7 +116,7 @@ public class JugarRegistrado extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(botonBuscaminasFacil)
                                     .addComponent(botonBuscaminasDificil)
-                                    .addComponent(jButton3))))
+                                    .addComponent(botonBuscaMinasExperto))))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -137,7 +137,7 @@ public class JugarRegistrado extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(botonBuscaminasDificil)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)))
+                        .addComponent(botonBuscaMinasExperto)))
                 .addGap(12, 12, 12)
                 .addComponent(botonPersonalizado))
         );
@@ -164,11 +164,11 @@ public class JugarRegistrado extends javax.swing.JFrame {
         buscaminas.setVisible(true);
     }//GEN-LAST:event_botonBuscaminasDificilActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void botonBuscaMinasExpertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscaMinasExpertoActionPerformed
         // TODO add your handling code here:
         Buscaminas buscaminas = new Buscaminas(20, 40);
         buscaminas.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_botonBuscaMinasExpertoActionPerformed
 
     private void botonPersonalizadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPersonalizadoActionPerformed
         // TODO add your handling code here:
@@ -219,11 +219,11 @@ public class JugarRegistrado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonBuscaMinasExperto;
     private javax.swing.JButton botonBuscaminasDificil;
     private javax.swing.JButton botonBuscaminasFacil;
     private javax.swing.JButton botonPersonalizado;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
