@@ -43,6 +43,7 @@ public class JugarRegistrado extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("A Jugar! Disfruta del juego Premium");
 
         textJugador.setText("Jugador Registrado");
 
@@ -98,6 +99,7 @@ public class JugarRegistrado extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
