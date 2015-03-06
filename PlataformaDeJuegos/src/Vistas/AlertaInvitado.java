@@ -111,6 +111,8 @@ public class AlertaInvitado extends javax.swing.JFrame {
 
     private void botonContinuarInvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarInvitadoActionPerformed
         // TODO add your handling code here:
+        JugarInvitado jugarInvitado = new JugarInvitado();
+        jugarInvitado.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_botonContinuarInvitadoActionPerformed
 

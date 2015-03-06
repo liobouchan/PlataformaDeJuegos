@@ -163,6 +163,7 @@ public class Bienvenida extends javax.swing.JFrame {
         // TODO add your handling code here:
         AlertaInvitado alertaInvitado = new AlertaInvitado();
         alertaInvitado.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_botonIniciarComoInvitadoActionPerformed
 
     private void labelRegistrateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelRegistrateMouseClicked
