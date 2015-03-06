@@ -26,20 +26,22 @@ public class BatallaNaval extends javax.swing.JFrame {
      */
     Image tablero;
     int nEstado = 0;
-    int tableroMio[][]=new int[8][8];
-    boolean bTableroMio[][]=new boolean[8][8];
-    int tableroSuyo[][]=new int[8][8];
-    boolean bTableroSuyo[][]=new boolean[8][8];
-    int pFila=0;
-    int pCol=0;
-    int pTam=5;
-    int pHor=0;
-    
+    int tableroMio[][] = new int[8][8];
+    int tableroSuyo[][] = new int[8][8];
+    int pFila = 0;
+    int pCol = 0;
+    int pTam = 5;
+    int pHor = 0;
+    boolean bTableroMio[][] = new boolean[8][8];
+    boolean bTableroSuyo[][] = new boolean[8][8];
+
     public BatallaNaval() {
-        ObtenerImagenes i =new ObtenerImagenes();
-        tablero=i.cargar("tablero.jpeg");
+        
+        ObtenerImagenes obtenerImagenes =new ObtenerImagenes();
+        tablero=obtenerImagenes.cargar("tablero.jpeg");
         initComponents();
         setBounds(0,0,800,600);
+        
         addMouseListener(
             new MouseAdapter() {
                 public void mouseClicked(MouseEvent e) {
@@ -49,49 +51,49 @@ public class BatallaNaval extends javax.swing.JFrame {
                         repaint();
                         return;
                     }
-                    if (nEstado==0){
+                    if ( nEstado == 0 ){
                         nEstado=1;
                         iniciarPartida();
                         repaint();
-                    }else if (nEstado==1){
-                        if (puedePonerBarco()){
-                            int pDF=0;
-                            int pDC=0;
-                            if (pHor==1){
-                                pDF=1;
+                    }else if ( nEstado == 1 ){
+                        if ( puedePonerBarco() ){
+                            int pDF = 0;
+                            int pDC = 0;
+                            if ( pHor == 1 ){
+                                pDF = 1;
                             }else{
-                                pDC=1;
+                                pDC = 1;
                             }
-                            for (int m=pFila;m<=pFila+(pTam-1)*pDF;m++){
-                                for (int n=pCol;n<=pCol+(pTam-1)*pDC;n++){
-                                    tableroMio[m][n]=pTam;
+                            for ( int m = pFila; m <= pFila + (pTam-1)*pDF; m++ ){
+                                for ( int n = pCol; n <= pCol+(pTam-1)*pDC; n++ ){
+                                    tableroMio[m][n] = pTam;
                                 }
                             }
                             pTam--;
-                            if (pTam==0){
-                                nEstado=2;
+                            if ( pTam == 0 ){
+                                nEstado = 2;
                                 repaint();
                             }
                         }
-                    }else if (nEstado==2){
-                        int f=(e.getY()-200)/30;
-                        int c=(e.getX()-450)/30;
-                        if (f!=pFila || c!=pCol){
-                            pFila=f;
-                            pCol=c;
-                            if (celdaEstaEnTablero(f, c)){
-                                if (bTableroSuyo[f][c]==false){
-                                    bTableroSuyo[f][c]=true;
+                    }else if ( nEstado == 2 ){
+                        int f = (e.getY()-200)/30;
+                        int c = (e.getX()-450)/30;
+                        if (f != pFila || c != pCol){
+                            pFila = f;
+                            pCol = c;
+                            if ( celdaEstaEnTablero(f, c) ){
+                                if ( bTableroSuyo[f][c] == false ){
+                                    bTableroSuyo[f][c] = true;
                                     repaint();
-                                    if (victoria(tableroSuyo, bTableroSuyo)){
+                                    if ( victoria(tableroSuyo, bTableroSuyo) ){
                                         JOptionPane.showMessageDialog(null, "Has ganado");
-                                        nEstado=0;
+                                        nEstado = 0;
                                     }
                                     dispararEl();
                                     repaint();
-                                    if (victoria(tableroMio, bTableroMio)){
+                                    if ( victoria(tableroMio, bTableroMio) ){
                                         JOptionPane.showMessageDialog(null, "Has perdido");
-                                        nEstado=0;
+                                        nEstado = 0;
                                     }
                                     repaint();
                                 }
@@ -108,11 +110,11 @@ public class BatallaNaval extends javax.swing.JFrame {
                     int x=e.getX();
                     int y=e.getY();
                     if (nEstado==1 && x>=100 && y>=200 && x<100+30*8 && y<200+30*8){
-                        int f=(y-200)/30;
-                        int c=(x-100)/30;
-                        if (f!=pFila || c!=pCol){
-                            pFila=f;
-                            pCol=c;
+                        int f = (y-200)/30;
+                        int c = (x-100)/30;
+                        if (f != pFila || c != pCol){
+                            pFila = f;
+                            pCol = c;
                             rectificarBarcoPoner();
                             repaint();
                         }
@@ -181,24 +183,23 @@ public class BatallaNaval extends javax.swing.JFrame {
     }
     
     public boolean celdaEstaEnTablero(int f, int c){
-        if (f<0) return false;
-        if (c<0) return false;
-        if (f>=8) return false;
-        if (c>=8) return false;
+        if (f < 0) return false;
+        if (c < 0) return false;
+        if (f >= 8) return false;
+        if (c >= 8) return false;
         return true;
     }
     
     public void ponerBarco(int tab[][], int tam){
-
         int f,c,hor;
         do{
-            f=(int)(Math.random()*8);
-            c=(int)(Math.random()*8);
-            hor=(int)(Math.random()*2);
-        }while(!puedePonerBarco(tab, tam, f, c, hor));
-        int df=0,dc=0;
-        if (hor==1) df=1;
-        else dc=1;
+            f = (int)(Math.random()*8);
+            c = (int)(Math.random()*8);
+            hor = (int)(Math.random()*2);
+        }while( !puedePonerBarco(tab, tam, f, c, hor) );
+        int df = 0,dc = 0;
+        if ( hor == 1 ) df = 1;
+        else dc = 1;
         for (int f2=f;f2<=f+(tam-1)*df;f2++){
             for (int c2=c;c2<=c+(tam-1)*dc;c2++){
                 tab[f2][c2]=tam;
@@ -248,6 +249,7 @@ public class BatallaNaval extends javax.swing.JFrame {
     public boolean puedePonerBarco(){
         return puedePonerBarco(tableroMio, pTam, pFila, pCol, pHor);
     }
+    
     public boolean noHayInvisible(int tab[][], int valor, boolean bVisible[][]){
         for (int n=0;n<8;n++){
             for (int m=0;m<8;m++){
@@ -261,7 +263,7 @@ public class BatallaNaval extends javax.swing.JFrame {
         return true;
     }
     
-        public void dispararEl(){
+    public void dispararEl(){
         int f,c;
         do{
             f=(int)(Math.random()*8);
@@ -270,7 +272,7 @@ public class BatallaNaval extends javax.swing.JFrame {
         bTableroMio[f][c]=true;
     }
         
-     public boolean victoria(int tab[][], boolean bTab[][]){
+    public boolean victoria(int tab[][], boolean bTab[][]){
         for (int n=0;n<8;n++){
             for (int m=0;m<8;m++){
                 if (bTab[n][m]==false && tab[n][m]!=0){
