@@ -11,10 +11,15 @@ package Vistas;
  * @author lio
  */
 public class JugarRegistrado extends javax.swing.JFrame {
-
+    String usuario;
     /**
      * Creates new form JugarRegistrado
      */
+    public JugarRegistrado( String usuario ){
+        this.usuario = usuario;
+        initComponents();
+        textJugador.setText(usuario + "!");
+    }
     public JugarRegistrado() {
         initComponents();
     }
@@ -28,17 +33,35 @@ public class JugarRegistrado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        textJugador = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        textJugador.setText("Jugador Registrado");
+
+        jLabel2.setText("Hola ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(455, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textJugador)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(textJugador)
+                    .addComponent(jLabel2))
+                .addContainerGap(328, Short.MAX_VALUE))
         );
 
         pack();
@@ -80,5 +103,8 @@ public class JugarRegistrado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel textJugador;
     // End of variables declaration//GEN-END:variables
 }

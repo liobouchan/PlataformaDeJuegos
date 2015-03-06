@@ -19,10 +19,7 @@ public class PlataformaDeJuegos {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Frame frame = new Frame();
         Bienvenida bienvenida = new Bienvenida();
-        frame.setLayout(new BorderLayout());
-        frame.add(bienvenida, BorderLayout.CENTER);
-        frame.setVisible(true);
+        bienvenida.setVisible(true);
     }
 }
