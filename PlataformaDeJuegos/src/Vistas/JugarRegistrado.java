@@ -8,6 +8,7 @@ package Vistas;
 
 import Juegos.BatallaNaval.BatallaNaval;
 import Juegos.BuscaMinas.Buscaminas;
+import Juegos.Gato.Gato;
 import javax.swing.JOptionPane;
 
 /**
@@ -46,6 +47,7 @@ public class JugarRegistrado extends javax.swing.JFrame {
         botonBuscaminasDificil = new javax.swing.JButton();
         botonBuscaMinasExperto = new javax.swing.JButton();
         botonPersonalizado = new javax.swing.JButton();
+        labelGato = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("A Jugar! Disfruta del juego Premium");
@@ -93,6 +95,15 @@ public class JugarRegistrado extends javax.swing.JFrame {
             }
         });
 
+        labelGato.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        labelGato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/Gato.gif"))); // NOI18N
+        labelGato.setText("Gato");
+        labelGato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelGatoMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,23 +112,27 @@ public class JugarRegistrado extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 579, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textJugador))
                     .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(0, 8, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(botonPersonalizado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
+                            .addComponent(botonBuscaminasFacil)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(botonPersonalizado, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(botonBuscaminasFacil)
                                     .addComponent(botonBuscaminasDificil)
-                                    .addComponent(botonBuscaMinasExperto))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                    .addComponent(botonBuscaMinasExperto))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelGato)
+                                .addGap(80, 80, 80)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -135,9 +150,12 @@ public class JugarRegistrado extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(botonBuscaminasFacil)
                         .addGap(18, 18, 18)
-                        .addComponent(botonBuscaminasDificil)
-                        .addGap(18, 18, 18)
-                        .addComponent(botonBuscaMinasExperto)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botonBuscaminasDificil)
+                                .addGap(18, 18, 18)
+                                .addComponent(botonBuscaMinasExperto))
+                            .addComponent(labelGato))))
                 .addGap(12, 12, 12)
                 .addComponent(botonPersonalizado))
         );
@@ -183,6 +201,11 @@ public class JugarRegistrado extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_botonPersonalizadoActionPerformed
 
+    private void labelGatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelGatoMouseClicked
+        // TODO add your handling code here:
+        Gato gato = new Gato();
+    }//GEN-LAST:event_labelGatoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -227,6 +250,7 @@ public class JugarRegistrado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel labelGato;
     private javax.swing.JLabel textJugador;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,6 +7,8 @@
 package Juegos.Gato;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -28,11 +30,12 @@ public class Gato {
 
     public Gato(){
         ManejoCampo();
-        
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         v.setLayout(new BorderLayout());
         v.setPanelCentro(pc);
-        v.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        v.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         v.setSize(600, 600);
+        v.setLocationRelativeTo(null);
         v.setVisible(true);
         v.getRestar().addActionListener(new ActionListener(){
             @Override
