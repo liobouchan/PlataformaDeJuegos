@@ -5,7 +5,7 @@
  */
 
 package Vistas;
-
+import Vistas.Bienvenida;
 /**
  *
  * @author lio
@@ -36,7 +36,7 @@ public class AlertaInvitado extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Piensalo 2 veces");
 
         jLabel1.setText("Si quieres disfrutar de todos los juegos y funcionalidades");
 
@@ -108,7 +108,7 @@ public class AlertaInvitado extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+   
     private void botonContinuarInvitadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarInvitadoActionPerformed
         // TODO add your handling code here:
         JugarInvitado jugarInvitado = new JugarInvitado();
@@ -119,6 +119,8 @@ public class AlertaInvitado extends javax.swing.JFrame {
     private void botonRegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarseActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
+        Bienvenida bienvenida = new Bienvenida();
+        bienvenida.setVisible(true);
         Registro registro = new Registro();
         registro.setVisible(true);
     }//GEN-LAST:event_botonRegistrarseActionPerformed

@@ -43,7 +43,7 @@ public class Registro extends javax.swing.JFrame {
         botonRegistrar = new javax.swing.JButton();
         botonCancelar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Registro de Usuarios");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         jLabel1.setText("Registro");
