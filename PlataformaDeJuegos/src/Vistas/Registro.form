@@ -52,7 +52,7 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="textUsuario" max="32767" attributes="0"/>
                           <Component id="textPassword" max="32767" attributes="0"/>
-                          <Component id="jPasswordField1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="textContraseñaValidada" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -83,7 +83,7 @@
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jPasswordField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="textContraseñaValidada" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="28" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -148,7 +148,7 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="textPassword">
     </Component>
-    <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+    <Component class="javax.swing.JPasswordField" name="textContrase&#xf1;aValidada">
     </Component>
   </SubComponents>
 </Form>

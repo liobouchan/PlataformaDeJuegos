@@ -41,7 +41,7 @@ public class Registro extends javax.swing.JFrame {
         botonRegistrar = new javax.swing.JButton();
         botonCancelar = new javax.swing.JButton();
         textPassword = new javax.swing.JPasswordField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        textContraseñaValidada = new javax.swing.JPasswordField();
 
         setTitle("Registro de Usuarios");
 
@@ -99,7 +99,7 @@ public class Registro extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(textUsuario)
                             .addComponent(textPassword)
-                            .addComponent(jPasswordField1))))
+                            .addComponent(textContraseñaValidada))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -122,7 +122,7 @@ public class Registro extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(textContraseñaValidada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonRegistrar)
@@ -136,12 +136,24 @@ public class Registro extends javax.swing.JFrame {
 
     private void botonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistrarActionPerformed
         // TODO add your handling code here:
-        String usuario , password;
+        String usuario , password, passwordConfirmar;
         usuario = String.valueOf(textUsuario.getText());
         password = String.valueOf(textPassword.getText());
-        OperacionesSQL operacionesSQL = new OperacionesSQL();
-        if (operacionesSQL.Registrar(usuario, password) == 1){
-            this.setVisible(false);
+        passwordConfirmar = String.valueOf(textContraseñaValidada.getText());
+        if(usuario.equals("")){
+            JOptionPane.showMessageDialog(null, "No puedes registrar un usuario Vacio");
+        }
+        if( password.equals("") || passwordConfirmar.equals("")){
+            JOptionPane.showMessageDialog(null, "No te pases , llena el campo contraseña");
+        }else{
+            if (password == passwordConfirmar){
+                OperacionesSQL operacionesSQL = new OperacionesSQL();
+                if (operacionesSQL.Registrar(usuario, password) == 1){
+                    this.setVisible(false);
+                }
+            }else{
+                JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
+            }
         }
     }//GEN-LAST:event_botonRegistrarActionPerformed
 
@@ -193,8 +205,8 @@ public class Registro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPasswordField textContraseñaValidada;
     private javax.swing.JPasswordField textPassword;
     private javax.swing.JTextField textUsuario;
     // End of variables declaration//GEN-END:variables
