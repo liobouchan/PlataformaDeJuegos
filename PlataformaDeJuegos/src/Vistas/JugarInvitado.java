@@ -7,6 +7,7 @@
 package Vistas;
 
 import Juegos.BuscaMinas.Buscaminas;
+import Juegos.Gato.Gato;
 
 /**
  *
@@ -30,7 +31,7 @@ public class JugarInvitado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        labelGato = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         botonFacil = new javax.swing.JButton();
@@ -40,7 +41,12 @@ public class JugarInvitado extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Jugar como Invitado");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/GatoJuego.gif"))); // NOI18N
+        labelGato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/GatoJuego.gif"))); // NOI18N
+        labelGato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                labelGatoMouseClicked(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/el-buscaminas.png"))); // NOI18N
 
@@ -76,7 +82,7 @@ public class JugarInvitado extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel1))
+                        .addComponent(labelGato))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(113, 113, 113)
                         .addComponent(jLabel3)))
@@ -100,7 +106,7 @@ public class JugarInvitado extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
+                    .addComponent(labelGato)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(botonExperto)
                         .addGap(18, 18, 18)
@@ -135,6 +141,11 @@ public class JugarInvitado extends javax.swing.JFrame {
         Buscaminas buscaminas = new Buscaminas(20, 100);
         buscaminas.setVisible(true);
     }//GEN-LAST:event_botonExpertoActionPerformed
+
+    private void labelGatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelGatoMouseClicked
+        // TODO add your handling code here:
+        Gato gato = new Gato();
+    }//GEN-LAST:event_labelGatoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -175,8 +186,8 @@ public class JugarInvitado extends javax.swing.JFrame {
     private javax.swing.JButton botonExperto;
     private javax.swing.JButton botonFacil;
     private javax.swing.JButton botonIntermedio;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel labelGato;
     // End of variables declaration//GEN-END:variables
 }
