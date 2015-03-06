@@ -47,6 +47,7 @@ public class Bienvenida extends javax.swing.JFrame {
         textPassword = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Bienvenido a Plataforma De Juegos");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setText("Bienvenido");
@@ -152,8 +153,9 @@ public class Bienvenida extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(20, 20, 20)
-                .addComponent(botonIniciarComoInvitado))
+                .addGap(8, 8, 8)
+                .addComponent(botonIniciarComoInvitado)
+                .addContainerGap())
         );
 
         pack();
@@ -186,7 +188,7 @@ public class Bienvenida extends javax.swing.JFrame {
             this.setVisible(false);
         }else{
             System.out.println("pedo en bienvenida no entro");
-            JOptionPane.showMessageDialog(null,"Usuario o Contraseña incorrectos");
+            JOptionPane.showMessageDialog(null,"Usuario o Contraseña incorrectos ó usuario sin registrar");
         }
     }//GEN-LAST:event_botonInicioSesionActionPerformed
 
