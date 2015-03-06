@@ -6,10 +6,39 @@
 
 package Juegos.BuscaMinas;
 
+import static java.lang.Thread.sleep;
+import javax.swing.JFrame;
+
 /**
  *
  * @author lio
  */
-public class Tiempo {
-    
+public class Tiempo extends Thread{
+    Buscaminas buscaMinas;
+    boolean Exit= false;
+    int segundos = 0;
+
+    Tiempo (JFrame j){
+        System.out.println("\n Comienza el tiempo...");
+        buscaMinas = (Buscaminas)j;
+    }
+
+    @Override
+    public void run(){
+        while(!Exit){
+        try{
+            sleep(1000);
+            segundos++;
+            buscaMinas.txtTime.setText(Integer.toString(segundos));
+        }
+        catch(InterruptedException e){
+            System.out.println(e);
+        }
+        }
+    }
+
+    public void parar(boolean b){
+        if(b)Exit = true;
+        segundos = 0;
+    }   
 }
