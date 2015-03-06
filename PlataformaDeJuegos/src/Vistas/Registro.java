@@ -146,7 +146,7 @@ public class Registro extends javax.swing.JFrame {
         if( password.equals("") || passwordConfirmar.equals("")){
             JOptionPane.showMessageDialog(null, "No te pases , llena el campo contraseña");
         }else{
-            if (password == passwordConfirmar){
+            if (password.equals(passwordConfirmar)){
                 OperacionesSQL operacionesSQL = new OperacionesSQL();
                 if (operacionesSQL.Registrar(usuario, password) == 1){
                     this.setVisible(false);
