@@ -6,10 +6,15 @@
 
 package Juegos.BatallaNaval;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+
 /**
  *
  * @author lio
  */
 public class ObtenerImagenes {
-    
+    public Image cargar(String ruta){
+        return Toolkit.getDefaultToolkit().createImage((getClass().getResource(ruta)));
+    }
 }
