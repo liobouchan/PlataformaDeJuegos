@@ -6,6 +6,8 @@
 
 package Vistas;
 
+import Juegos.BuscaMinas.Buscaminas;
+
 /**
  *
  * @author lio
@@ -29,30 +31,110 @@ public class JugarInvitado extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        botonFacil = new javax.swing.JButton();
+        botonIntermedio = new javax.swing.JButton();
+        botonExperto = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Jugar como Invitado");
 
-        jLabel1.setText("dsfasdfasfasdfasdfasdfasdfasdfasdf");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/GatoJuego.gif"))); // NOI18N
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Vistas/el-buscaminas.png"))); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        jLabel3.setText("Gato");
+
+        botonFacil.setText("Fácil");
+        botonFacil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonFacilActionPerformed(evt);
+            }
+        });
+
+        botonIntermedio.setText("Intermedio");
+        botonIntermedio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIntermedioActionPerformed(evt);
+            }
+        });
+
+        botonExperto.setText("Experto");
+        botonExperto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonExpertoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addComponent(jLabel1)
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(jLabel3)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(botonFacil)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(botonIntermedio))
+                            .addComponent(jLabel2))
+                        .addContainerGap(33, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonExperto)
+                        .addGap(110, 110, 110))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(jLabel1)
-                .addContainerGap(176, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(botonExperto)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(botonFacil)
+                        .addComponent(botonIntermedio)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonIntermedioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIntermedioActionPerformed
+        // TODO add your handling code here:
+        Buscaminas buscaminas = new Buscaminas(10, 10);
+        buscaminas.setVisible(true);
+    }//GEN-LAST:event_botonIntermedioActionPerformed
+
+    private void botonFacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonFacilActionPerformed
+        // TODO add your handling code here:
+        Buscaminas buscaminas = new Buscaminas(5, 3);
+        buscaminas.setVisible(true);
+    }//GEN-LAST:event_botonFacilActionPerformed
+
+    private void botonExpertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonExpertoActionPerformed
+        // TODO add your handling code here:
+        Buscaminas buscaminas = new Buscaminas(20, 100);
+        buscaminas.setVisible(true);
+    }//GEN-LAST:event_botonExpertoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,6 +172,11 @@ public class JugarInvitado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonExperto;
+    private javax.swing.JButton botonFacil;
+    private javax.swing.JButton botonIntermedio;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

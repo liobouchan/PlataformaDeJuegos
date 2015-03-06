@@ -41,6 +41,7 @@ public class BatallaNaval extends javax.swing.JFrame {
         tablero=obtenerImagenes.cargar("tablero.jpeg");
         initComponents();
         setBounds(0,0,800,600);
+        this.setLocationRelativeTo(null);
         
         addMouseListener(
             new MouseAdapter() {
