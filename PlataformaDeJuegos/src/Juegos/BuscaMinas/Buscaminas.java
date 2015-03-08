@@ -17,6 +17,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import plataformadejuegos.Victorioso;
 
 /**
  *
@@ -42,7 +43,10 @@ public class Buscaminas extends JFrame implements ActionListener{
         this.numeroMinas = numeroMinas;
         botones = new JButton[numeroBotones][numeroBotones];
         minas = new int[numeroBotones][numeroBotones];
-    
+        
+        Buscador busca = new Buscador("buscaminas");
+        busca.Imprimir();
+        busca.destruir();
         JPanel panelNorth = new JPanel();
         panelNorth.add(minasRestantes);
         panelNorth.add(txtMinas);
@@ -139,7 +143,12 @@ public class Buscaminas extends JFrame implements ActionListener{
                     botones[i][j].setBackground(Color.RED);
                 }
             }
-        JOptionPane.showMessageDialog(this,"Lo siento... Has perdido!");
+            String resultado = "Perdedor";
+            Victorioso herencia = new Victorioso(resultado);
+            herencia.getResultado();
+            herencia.Imprimir();
+            herencia.destruir();
+//JOptionPane.showMessageDialog(this,"Lo siento... Has perdido!");
         nuevoJuego();
     }
     int minasCerca(int x,int y){

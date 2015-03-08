@@ -14,12 +14,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
 import javax.swing.JOptionPane;
+import plataformadejuegos.Victorioso;
 
 /**
  *
  * @author lio
  */
-public class BatallaNaval extends javax.swing.JFrame {
+public class BatallaNaval extends javax.swing.JFrame{
 
     /**
      * Creates new form BatallaNaval
@@ -87,13 +88,21 @@ public class BatallaNaval extends javax.swing.JFrame {
                                     bTableroSuyo[f][c] = true;
                                     repaint();
                                     if ( victoria(tableroSuyo, bTableroSuyo) ){
-                                        JOptionPane.showMessageDialog(null, "Has ganado");
+                                        Victorioso herencia = new Victorioso("Ganador");
+                                        herencia.getResultado();
+                                        herencia.Imprimir();
+                                        herencia.destruir();
+                                       // JOptionPane.showMessageDialog(null, "Has ganado");
                                         nEstado = 0;
                                     }
                                     dispararEl();
                                     repaint();
                                     if ( victoria(tableroMio, bTableroMio) ){
-                                        JOptionPane.showMessageDialog(null, "Has perdido");
+                                        //JOptionPane.showMessageDialog(null, "Has perdido");
+                                        Victorioso herencia = new Victorioso("Perdedor");
+                                        herencia.getResultado();
+                                        herencia.Imprimir();
+                                        herencia.destruir();
                                         nEstado = 0;
                                     }
                                     repaint();
