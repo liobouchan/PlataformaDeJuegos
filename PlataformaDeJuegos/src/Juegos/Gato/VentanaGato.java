@@ -34,6 +34,15 @@ public class VentanaGato extends JFrame{
     public void destruir(){
         System.gc();
     } 
+    
+    public void VentanaGato(JPanel panel){
+        this.panel = panel;
+    }
+    
+    public void VentanaGato(VentanaGato unaVentanaGato){
+        this.panel = unaVentanaGato.panel;
+    }
+    
     public final void init(){
         resultado = new JLabel("Barra estado");
         restar = new JButton("Reiniciar");

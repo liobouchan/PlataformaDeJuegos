@@ -37,8 +37,17 @@ public class PanelCampo extends JPanel{
             }
         }
     }
+
+    public void PanelCampo(JLabel[][] campoGato){
+        this.campoGato = campoGato;
+    }
+    
+    public void PanelCampoBit(PanelCampo unPanelCampo){
+        this.campoGato = unPanelCampo.campoGato;
+    }
     
     public void destruir(){
+        this.campoGato = null;
         System.gc();
     } 
     

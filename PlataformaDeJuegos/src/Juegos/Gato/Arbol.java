@@ -36,7 +36,16 @@ public class Arbol {
         nodo10.addHijo(nodo20);
     }
     
+    public void Arbol(Nodo nodo00){
+        this.nodo00 = nodo00;
+    }
+    
+    public void Arbol(Arbol unArbol){
+        this.nodo00 = unArbol.nodo00;
+    }
+    
     public void destruir(){
+        this.nodo00=null;
         System.gc();
     } 
     

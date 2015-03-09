@@ -17,7 +17,16 @@ public class PanelCampoBit {
     
     }
     
+    public void PanelCampoBit(char[][] Matriz){
+        this.Matriz = Matriz;
+    }
+    
+    public void PanelCampoBit(PanelCampoBit unPanelCampoBit){
+        this.Matriz = unPanelCampoBit.Matriz;
+    }
+    
     public void destruir(){
+        this.Matriz = null;
         System.gc();
     } 
     

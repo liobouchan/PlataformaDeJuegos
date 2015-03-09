@@ -53,6 +53,14 @@ public class Gato {
         });
     }
     
+    public void Gato(PanelCampo pc){
+        this.pc = pc;
+    }
+    
+    public void Gato(Gato unGato){
+        this.v = unGato.v;
+    }
+    
     public void destruir(){
         System.gc();
     }     

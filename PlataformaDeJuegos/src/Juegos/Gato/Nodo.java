@@ -34,8 +34,13 @@ public class Nodo {
         this.coordenada[1] = y;
         hijos = new ArrayList<>();
     } 
+    
+    public void Nodo(Nodo unNodo){
+        this.coordenada = unNodo.coordenada;
+    }
 
     public void destruir(){
+        this.coordenada = null;
         System.gc();
     } 
     
