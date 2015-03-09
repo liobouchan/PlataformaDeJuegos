@@ -134,6 +134,19 @@ public class BatallaNaval extends javax.swing.JFrame{
         );
     }
     
+    public void BatallaNaval(int nEstado){
+        this.nEstado = nEstado;
+    }
+    
+    public void BatallaNaval(BatallaNaval unaBatallaNaval){
+        this.nEstado = unaBatallaNaval.nEstado;
+    }
+    
+    public void destruir(){
+        this.nEstado = 0;
+        System.gc();
+    }
+    
     public void iniciarPartida(){
         for ( int n=0; n<8 ; n++ ){
             for ( int m=0; m<8 ; m++ ){
