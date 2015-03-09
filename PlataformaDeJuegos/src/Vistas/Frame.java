@@ -11,7 +11,7 @@ package Vistas;
  * @author lio
  */
 public class Frame extends javax.swing.JFrame {
-
+    String frame;
     /**
      * Creates new form Frame
      */
@@ -19,9 +19,18 @@ public class Frame extends javax.swing.JFrame {
         initComponents();
     }
     
+    public Frame(String frame){
+        this.frame = frame;
+    }
+        
+    public Frame(Frame unFrame){
+        frame = unFrame.frame;
+    }
+
     public void destruir(){
+        this.frame = null;
         System.gc();
-    } 
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

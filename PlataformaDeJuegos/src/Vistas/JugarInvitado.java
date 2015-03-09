@@ -14,18 +14,26 @@ import Juegos.Gato.Gato;
  * @author lio
  */
 public class JugarInvitado extends javax.swing.JFrame {
-
+    String usuario;
     /**
      * Creates new form JugarInvitado
      */
     public JugarInvitado() {
         initComponents();
     }
-    
-    public void destruir(){
-        System.gc();
-    }     
+      
+    public JugarInvitado(String usuario){
+        this.usuario = usuario;
+    }
+        
+    public JugarInvitado(JugarInvitado unJugarInvitado){
+        usuario = unJugarInvitado.usuario;
+    }
 
+    public void destruir(){
+        this.usuario = null;
+        System.gc();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -19,13 +19,17 @@ public class Resultado {
     
     public Resultado(){
     }
- 
-    public String getResultado(){
-        return resultado;
-    }
     
+    public Resultado(Resultado unResultado){
+        resultado = unResultado.resultado;
+    }
+
     public void destruir(){
         this.resultado = null;
         System.gc();
+    }
+    
+    public String getResultado(){
+        return resultado;
     }
 }

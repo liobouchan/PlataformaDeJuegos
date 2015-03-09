@@ -11,7 +11,7 @@ import Vistas.Bienvenida;
  * @author lio
  */
 public class AlertaInvitado extends javax.swing.JFrame {
-
+    String mensaje;
     /**
      * Creates new form AlertaInvitado
      */
@@ -19,9 +19,18 @@ public class AlertaInvitado extends javax.swing.JFrame {
         initComponents();
     }
 
+    public AlertaInvitado(String mensaje){
+        this.mensaje = mensaje;
+    }
+    
+    public AlertaInvitado(AlertaInvitado unAlertaInvitado){
+        mensaje = unAlertaInvitado.mensaje;
+    }
+
     public void destruir(){
+        this.mensaje = null;
         System.gc();
-    } 
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

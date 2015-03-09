@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  * @author lio
  */
 public class Registro extends javax.swing.JFrame {
-
+    String registro;
     /**
      * Creates new form Registro1
      */
@@ -23,8 +23,16 @@ public class Registro extends javax.swing.JFrame {
     }
     
     public void destruir(){
+        this.registro = null;
         System.gc();
-    } 
+    }
+    public Registro(String registro){
+        this.registro = registro;
+    }
+    
+    public Registro(Registro unRegistro){
+        registro = unRegistro.registro;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

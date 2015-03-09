@@ -22,5 +22,13 @@ public class Victorioso extends Resultado{
     public void Imprimir(){
         JOptionPane.showMessageDialog(null, "Fuiste " + getResultado());
     }
-    
+
+    public Victorioso(Victorioso unVictorioso){
+        resultado = unVictorioso.resultado;
+    }
+
+    public void destruir(){
+        this.resultado = null;
+        System.gc();
+    }
 }

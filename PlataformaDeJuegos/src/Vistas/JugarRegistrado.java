@@ -30,7 +30,12 @@ public class JugarRegistrado extends javax.swing.JFrame {
         initComponents();
     }
     
+    public JugarRegistrado( JugarRegistrado unJugarRegistrado ){
+        usuario = unJugarRegistrado.usuario;
+    }
+    
     public void destruir(){
+        this.usuario = null;
         System.gc();
     } 
 

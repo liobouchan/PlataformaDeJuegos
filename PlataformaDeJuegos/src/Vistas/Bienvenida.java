@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  * @author lio
  */
 public class Bienvenida extends javax.swing.JFrame {
-
+    String mensaje;
     /**
      * Creates new form Prueba
      */
@@ -23,9 +23,18 @@ public class Bienvenida extends javax.swing.JFrame {
         initComponents();
     }
     
+    public Bienvenida(String mensaje){
+        this.mensaje = mensaje;
+    }
+    
+    public Bienvenida(Bienvenida unBienvenida){
+        mensaje = unBienvenida.mensaje;
+    }
+
     public void destruir(){
+        this.mensaje = null;
         System.gc();
-    } 
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
