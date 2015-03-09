@@ -38,6 +38,10 @@ public class PanelCampo extends JPanel{
         }
     }
     
+    public void destruir(){
+        System.gc();
+    } 
+    
     public void restart(){
         this.removeAll();
         this.setLayout(new GridLayout(3, 3, 3, 3));

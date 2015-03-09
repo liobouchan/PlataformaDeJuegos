@@ -53,8 +53,9 @@ public class Gato {
         });
     }
     
-    
-    
+    public void destruir(){
+        System.gc();
+    }     
     public final void ManejoCampo(){
         MouseAdapter ma = new MouseAdapter(){
             @Override
@@ -159,7 +160,6 @@ public class Gato {
             
         }
     }
-    
     
     public void Ganador(char tirador){
         int contador = 0;

@@ -34,6 +34,10 @@ public class Nodo {
         this.coordenada[1] = y;
         hijos = new ArrayList<>();
     } 
+
+    public void destruir(){
+        System.gc();
+    } 
     
     public void addHijo(Nodo h){
         hijos.add(h);

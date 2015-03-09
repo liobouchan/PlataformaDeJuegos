@@ -36,6 +36,10 @@ public class Arbol {
         nodo10.addHijo(nodo20);
     }
     
+    public void destruir(){
+        System.gc();
+    } 
+    
     public void setTiro(char tiro, int X, int Y){
         String coordenada = "" + X + Y;
         switch(coordenada){
@@ -54,7 +58,6 @@ public class Arbol {
     public void ImprimeArbol(){
         System.out.println(nodo00.buscaBSF('X'));
     }
-    
     
     public static void main(String[] args){
         Arbol a = new Arbol();

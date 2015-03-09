@@ -13,6 +13,14 @@ package Juegos.Gato;
 public class PanelCampoBit {
    private char[][] Matriz;
 
+    public void PanelCampoBit(){
+    
+    }
+    
+    public void destruir(){
+        System.gc();
+    } 
+    
     public PanelCampoBit() {
         Matriz = new char[3][3];
         for(int i = 0; i < 3; i ++){
