@@ -23,8 +23,15 @@ public class OperacionesSQL {
    String sql;
    ResultSet resultSet;
    Statement statement;
+   public void OperacionesSQL(){
    
-    public int Registrar(String usuario , String password){
+   }
+   
+   public void destruir(){
+    System.gc();
+   } 
+   
+   public int Registrar(String usuario , String password){
         int n;
         try{
 
@@ -53,7 +60,7 @@ public class OperacionesSQL {
        return 0;
     }      
     
-    public int ValidarUsuario(String usuario){
+   public int ValidarUsuario(String usuario){
         sql = "SELECT usuario from jugador";
         
         try{
@@ -71,7 +78,7 @@ public class OperacionesSQL {
         return 0;
     }
     
-    public int InicioDeSesion(String usuario , String password){
+   public int InicioDeSesion(String usuario , String password){
         sql = "SELECT * FROM jugador WHERE usuario = '" + usuario + "' AND password = '" + password + "'";;
         int i = 0; 
         try{
