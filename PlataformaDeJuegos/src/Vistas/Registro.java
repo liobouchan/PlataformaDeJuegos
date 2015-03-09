@@ -21,6 +21,10 @@ public class Registro extends javax.swing.JFrame {
     public Registro() {
         initComponents();
     }
+    
+    public void destruir(){
+        System.gc();
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.

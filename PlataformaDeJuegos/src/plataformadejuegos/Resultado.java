@@ -19,7 +19,7 @@ public class Resultado {
     
     public Resultado(){
     }
-    
+ 
     public String getResultado(){
         return resultado;
     }
