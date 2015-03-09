@@ -84,7 +84,20 @@ public class Buscaminas extends JFrame implements ActionListener{
                  setSize(600,600);
                  setVisible(true);
     }
+    
+    public void Buscaminas(){
+    
+    }
 
+    public void Buscaminas(Buscaminas unBuscaminas){
+        this.botones = unBuscaminas.botones;
+    }
+    
+    public void destruir(){
+        this.botones = null;
+        System.gc();
+    }
+    
     void colocar(int numMinas){
         System.out.println("Colocando Minas... \n");
         for(int i = 0; i<numMinas ;i++){

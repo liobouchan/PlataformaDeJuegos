@@ -15,6 +15,19 @@ public class Buscador extends plataformadejuegos.Juegos{
     public Buscador(String nombre){
         super(nombre);
     }
+    
+    public void Buscador(){
+    
+    }
+    
+    public void Buscador(Buscador unBuscador){
+ 
+    }
+    
+    public void destruir(){
+        System.gc();
+    }
+    
     public void Imprimir(){
         System.out.println("Estamos Implementando Herencia " + getNombreJuego());
     }
