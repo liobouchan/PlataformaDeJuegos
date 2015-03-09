@@ -22,6 +22,19 @@ public class Tiempo extends Thread{
         System.out.println("\n Comienza el tiempo...");
         buscaMinas = (Buscaminas)j;
     }
+    
+    public void Tiempo(){
+        
+    }
+    
+    public void Tiempo(Tiempo unTiempo){
+        this.segundos = segundos;
+    }
+    
+    public void destruir(){
+        this.segundos = 0;
+        System.gc();
+    }
 
     @Override
     public void run(){
