@@ -23,11 +23,21 @@ public class OperacionesSQL {
    String sql;
    ResultSet resultSet;
    Statement statement;
+   
    public void OperacionesSQL(){
    
    }
    
+   public void OperacionesSQL(String sql){
+       this.sql = sql;
+   }
+   
+   public void OperacionesSQL(OperacionesSQL unaOperacionSQL){
+       this.sql = unaOperacionSQL.sql;
+   }
+   
    public void destruir(){
+    this.conexion = null;
     System.gc();
    } 
    

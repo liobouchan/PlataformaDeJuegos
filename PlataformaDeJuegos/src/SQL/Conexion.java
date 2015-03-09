@@ -18,6 +18,19 @@ public class Conexion {
     public Conexion(){
     }
     
+    public Conexion(Connection conexion){
+        this.conexion = conexion;
+    }
+    
+    public Conexion(Conexion unaConexion){
+        conexion = unaConexion.conexion;
+    }
+
+    public void destruir(){
+        this.conexion = null;
+        System.gc();
+    }
+    
     public Connection init(){
         try{
             Class.forName("com.mysql.jdbc.Driver");
